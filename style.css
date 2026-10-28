@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    min-height: 100vh;
+    color: #ff6688;
+    font-family: Arial, sans-serif;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.heart-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+#love-heart {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.love-text {
+    fill: #ff6688;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-anchor: start;
+    opacity: 0.9;
+}
+
+footer {
+    margin-top: 20px;
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.035);
+    }
+}
+
+@media (max-width: 480px) {
+    .heart-container {
+        max-width: 100%;
+    }
+
+    .love-text {
+        font-size: 10px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}
+footer a {
+    color: #ff6688;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff6688;
+}

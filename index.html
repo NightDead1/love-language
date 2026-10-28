@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>I Love You in Every Language</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <div class="heart-container">
+
+            <svg
+                id="love-heart"
+                viewBox="0 0 500 460"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <defs>
+                    <clipPath id="heart-shape">
+                        <path d="
+                            M 250 430
+                            C 220 405, 55 285, 55 165
+                            C 55 85, 115 45, 175 55
+                            C 210 60, 235 85, 250 110
+                            C 265 85, 290 60, 325 55
+                            C 385 45, 445 85, 445 165
+                            C 445 285, 280 405, 250 430
+                            Z
+                        "/>
+                    </clipPath>
+                </defs>
+
+                <g id="love-lines" clip-path="url(#heart-shape)"></g>
+
+            </svg>
+
+        </div>
+
+        <footer>
+    created by
+    <a href="https://github.com/NightDead1" target="_blank">
+        Sezar
+    </a>
+</footer>
+
+    </main>
+
+    <script>
+        const phrases = [
+            "I love you",
+            "Je t'aime",
+            "Te amo",
+            "Ich liebe dich",
+            "Ti amo",
+            "Seni seviyorum",
+            "Я тебя люблю",
+            "愛してる",
+            "사랑해",
+            "أحبك",
+            "دوستت دارم",
+            "Kocham cię",
+            "Eu te amo",
+            "Mahal kita",
+            "Nakupenda",
+            "Ik hou van jou",
+            "Volim te",
+            "Aishiteru",
+            "Ég elska þig",
+            "Te iubesc",
+            "Mi amas vin",
+            "Ljubim te",
+            "Σ' αγαπώ",
+            "אני אוהב אותך"
+        ];
+
+        const lines = document.getElementById("love-lines");
+
+        for (let y = 35; y <= 435; y += 13) {
+
+            const text = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "text"
+            );
+
+            text.setAttribute("x", "-100");
+            text.setAttribute("y", y);
+            text.setAttribute("class", "love-text");
+
+            let sentence = "";
+
+            for (let i = 0; i < 9; i++) {
+                const index = Math.floor(
+                    Math.random() * phrases.length
+                );
+
+                sentence += phrases[index] + " ♥ ";
+            }
+
+            text.textContent = sentence.repeat(3);
+
+            lines.appendChild(text);
+        }
+    </script>
+
+</body>
+</html>
